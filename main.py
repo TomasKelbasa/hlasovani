@@ -13,3 +13,7 @@ def on_forever():
         radio.send_value("answer", 69)
 basic.forever(on_forever)
 
+def on_received_value(name, value):
+    if name == "confirm" and value == control.device_serial_number():
+        basic.show_icon(IconNames.YES)
+radio.on_received_value(on_received_value)
