@@ -21,6 +21,7 @@ basic.forever(function on_forever() {
     }
     
 })
+// pokud je hlas serverem přijat, server pošle potvrzení a klient zobrazí znak YES
 radio.onReceivedValue(function on_received_value(name: string, value: number) {
     if (name == "confirm" && value == control.deviceSerialNumber()) {
         basic.showIcon(IconNames.Yes)
